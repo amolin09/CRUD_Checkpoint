@@ -9,9 +9,17 @@ require("dotenv").config()
 app.use(express.json())
 
 // using routes
-let routes = require("./routes")
+let dogRoutes = require("./Routes/routes")
 
-app.use(routes)
+app.use(dogRoutes)
+
+let authRoutes = require("./Routes/authRoutes")
+
+app.use(authRoutes)
+
+let protectionRoutes = require("./Routes/protectedRoutes")
+
+app.use(protectionRoutes)
 
 //setting port to DB_PORT variable from .env
 let PORT = process.env.DB_PORT || 9005

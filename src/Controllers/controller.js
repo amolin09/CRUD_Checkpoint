@@ -1,5 +1,5 @@
 //using database connection
-let db = require("./db");
+let db = require("../db");
 
 //should return a summary of all the entries in the database
 let listDogs = function(req, res){

@@ -5,7 +5,7 @@ let express = require("express")
 let router = express.Router()
 
 //connecting controller file to routes
-let controller = require('./controller')
+let controller = require('../Controllers/controller')
 
 //creates get route to call listDogs from controller 
 router.get('/dog', controller.listDogs)
@@ -17,7 +17,7 @@ router.get('/dog/:id', controller.getDog)
 router.delete('/dog/:id', controller.deleteDog)
 
 //creates get route to call addDog from controller 
-router.post('/dog', controller.addDog)
+router.post('/dog',  controller.addDog)
 
 //creates get route to call updateDog from controller 
 router.put('/dog/:id', controller.updateDog)
