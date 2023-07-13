@@ -21,8 +21,10 @@ let protectionRoutes = require("./Routes/protectedRoutes")
 
 app.use(protectionRoutes)
 
+app.use("../public")
+
 //setting port to DB_PORT variable from .env
-let PORT = process.env.DB_PORT || 9005
+let PORT = process.env.DB_PORT || 3306
 
 //app listening on port
 app.listen(PORT, function(){

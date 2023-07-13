@@ -1,0 +1,15 @@
+# fly.toml app configuration file generated for crudcheckpoint on 2023-07-12T18:53:21-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "crudcheckpoint"
+primary_region = "dfw"
+
+[http_service]
+  internal_port = 3306
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
