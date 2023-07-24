@@ -17,9 +17,17 @@ let authRoutes = require("./Routes/authRoutes")
 
 app.use(authRoutes)
 
-let protectionRoutes = require("./Routes/protectedRoutes")
+// let protectionRoutes = require("./Routes/protectedRoutes")
 
-app.use(protectionRoutes)
+// app.use(protectionRoutes)
+
+let postRoutes = require("./Routes/postRoutes")
+
+app.use(postRoutes)
+
+let followRoutes = require("./Routes/followRoutes")
+
+app.use(followRoutes)
 
 app.use("../public")
 
