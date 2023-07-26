@@ -6,10 +6,12 @@ let router = express.Router()
 //connecting controller file to routes
 let controller = require('../Controllers/followController')
 
-router.post('/newFollow', controller.newFollow)
+let authsMiddleWare = require("../middleware")
 
-router.delete('/unfollow', controller.unfollow)
+router.post('/newFollow', authsMiddleWare.checkJwt, controller.newFollow)
 
-router.get('/listFollowing/:id', controller.listFollowing)
+router.delete('/unfollow/:dogid', authsMiddleWare.checkJwt, controller.unfollow)
 
-module.export = router;
+router.get('/listFollowing', authsMiddleWare.checkJwt, controller.listFollowing)
+
+module.exports = router;

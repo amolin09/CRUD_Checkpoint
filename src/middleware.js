@@ -19,6 +19,7 @@ const checkJwt = function(req, res, next){
 
     try {
       let decodedToken = jwt.verify(signedToken, process.env.JWT_KEY);
+      req.userinfo = decodedToken
       next();
     }
     catch(err){

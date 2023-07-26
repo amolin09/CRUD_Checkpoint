@@ -29,7 +29,7 @@ let followRoutes = require("./Routes/followRoutes")
 
 app.use(followRoutes)
 
-app.use("../public")
+
 
 //setting port to DB_PORT variable from .env
 let PORT = process.env.DB_PORT || 3306
